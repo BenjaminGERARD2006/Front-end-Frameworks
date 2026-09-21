@@ -1,6 +1,6 @@
 import { useState } from "react"
 import type { Movie } from "../types"
-import { getPosterUrl } from "../src/data/sampleMovies"
+import { getPosterUrl } from "../data/sampleMovies"
 
 interface MovieCardProps {
   movie: Movie
@@ -8,10 +8,6 @@ interface MovieCardProps {
 
 function MovieCard({ movie }: MovieCardProps) {
   const [isFavourite, setIsFavourite] = useState(false)
-
-  const toggleFavourite = () => {
-    setIsFavourite((current) => !current)
-  }
 
   return (
     <article>
@@ -24,7 +20,7 @@ function MovieCard({ movie }: MovieCardProps) {
 
       <p>{movie.vote_average.toFixed(1)}</p>
 
-      <button onClick={toggleFavourite}>
+      <button onClick={() => setIsFavourite((current) => !current)}>
         {isFavourite
           ? "Remove from favourites"
           : "Add to favourites"}

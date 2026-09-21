@@ -1,13 +1,13 @@
 interface SearchBarProps {
-  value: string
+  query: string
   onChange: (value: string) => void
 }
 
-function SearchBar({ value, onChange }: SearchBarProps) {
+function SearchBar({ query, onChange }: SearchBarProps) {
   return (
     <input
       type="text"
-      value={value}
+      value={query}
       onChange={(event) => onChange(event.target.value)}
       placeholder="Search movies..."
     />

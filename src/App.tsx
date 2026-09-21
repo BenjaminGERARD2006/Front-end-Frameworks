@@ -1,8 +1,8 @@
 import { useState } from "react"
-import MovieList from "../components/MovieList"
-import SearchBar from "../components/SearchBar"
+import MovieList from "./components/MovieList"
+import SearchBar from "./components/SearchBar"
 import { SAMPLE_MOVIES } from "./data/sampleMovies"
-import type { Movie } from "../types"
+import type { Movie } from "./types"
 
 function App() {
   const [search, setSearch] = useState("")
@@ -18,7 +18,7 @@ function App() {
       <h1>Movie App</h1>
 
       <SearchBar
-        value={search}
+        query={search}
         onChange={setSearch}
       />
 
@@ -28,4 +28,3 @@ function App() {
 }
 
 export default App
-
