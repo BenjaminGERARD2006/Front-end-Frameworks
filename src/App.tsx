@@ -1,29 +1,11 @@
-import { useState } from "react"
-import MovieList from "./components/MovieList"
-import SearchBar from "./components/SearchBar"
-import { SAMPLE_MOVIES } from "./data/sampleMovies"
-import type { Movie } from "./types"
+import { BrowserRouter } from "react-router-dom"
+import AppRoutes from "./AppRoutes"
 
 function App() {
-  const [search, setSearch] = useState("")
-
-  const movies = SAMPLE_MOVIES as Movie[]
-
-  const filteredMovies = movies.filter((movie) =>
-    movie.title.toLowerCase().includes(search.toLowerCase())
-  )
-
   return (
-    <main>
-      <h1>Movie App</h1>
-
-      <SearchBar
-        query={search}
-        onChange={setSearch}
-      />
-
-      <MovieList movies={filteredMovies} />
-    </main>
+    <BrowserRouter>
+      <AppRoutes />
+    </BrowserRouter>
   )
 }
 
