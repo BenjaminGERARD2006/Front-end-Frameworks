@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import SearchBar from "../components/SearchBar"
 import MovieList from "../components/MovieList"
+import { SAMPLE_MOVIES } from "../data/sampleMovies"
 import type { Movie } from "../types"
 
 function HomePage() {
@@ -27,7 +28,7 @@ function HomePage() {
         const data = await response.json()
         setMovies(data.results ?? [])
       } catch {
-        setMovies([])
+        setMovies(SAMPLE_MOVIES)
       }
     }
 
