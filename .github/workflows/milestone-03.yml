@@ -51,8 +51,14 @@ jobs:
 
       # ── Test suite (M1 + M2 regression + M3 tests) ─────────────────────────
 
+      - name: Run Milestone 1 tests
+        run: npm run test:m1
+
+      - name: Run Milestone 2 tests
+        run: npm run test:m2
+
       - name: Run Milestone 3 tests
-        run: npm run test:run:verbose
+        run: npm run test:m3
 
       # ── Notify Google Sheet ─────────────────────────────────────────────────
 
